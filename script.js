@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     
-    const response = await fetch("http://almirsoares.free.nf/login.php", { 
+    const response = await fetch("https://almirsoares.free.nf/login.php", { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
