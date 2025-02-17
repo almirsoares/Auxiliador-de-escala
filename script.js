@@ -19,14 +19,3 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         document.getElementById("error-message").textContent = "Credenciais inválidas";
     }
 });
-
-// Protege a página success.html
-if (window.location.pathname.includes("success.html")) {
-    const user = JSON.parse(sessionStorage.getItem("user"));
-    if (!user) {
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("user-name").textContent = user.nome;
-        document.getElementById("user-role").textContent = user.nivel_acesso;
-    }
-}

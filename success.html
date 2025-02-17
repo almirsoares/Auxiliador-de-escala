@@ -10,8 +10,26 @@
 <body>
     <div class="success-container">
         <h2>Login realizado com sucesso!</h2>
-        <p>Bem-vindo, Almir!</p>
-        <a href="index.html">Sair</a>
+        <p id="welcome-message"></p>
+        <p id="user-role"></p>
+        <button id="logout">Sair</button>
     </div>
+
+    <script>
+        // Verifica se o usuário está logado
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        if (!user) {
+            window.location.href = "index.html"; // Redireciona para login se não estiver logado
+        } else {
+            document.getElementById("welcome-message").textContent = `Bem-vindo, ${user.nome}!`;
+            document.getElementById("user-role").textContent = `Nível de acesso: ${user.nivel_acesso}`;
+        }
+
+        // Função de logout
+        document.getElementById("logout").addEventListener("click", function() {
+            sessionStorage.removeItem("user");
+            window.location.href = "index.html"; // Redireciona para a página de login
+        });
+    </script>
 </body>
 </html>
