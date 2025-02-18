@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <script>
+        function setNivel(valor) {
+            localStorage.setItem("nivel", valor);
+            console.log("Nível definido para:", valor);
+            window.location.href = "menu.html";
+        }
+    </script>
+</head>
+<body>
+    <h1>Escolha seu nível</h1>
+    <button onclick="setNivel(1)">Atendente</button>
+    <button onclick="setNivel(2)">Supervisor</button>
+    <button onclick="setNivel(3)">Admin</button>
+</body>
+</html>
